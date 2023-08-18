@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import Loader from "./Loader";
+import Modal from "./Modal/Modal";
 
 import TodoList from "./Todo/TodoList";
 
@@ -50,7 +51,8 @@ function App() {
   return (
     <Context.Provider value={{ removeTodo }}>
       <div className="wrapper">
-        <h1>What should father to do?</h1>
+        <h1>What should I do today?</h1>
+        <Modal />
         <React.Suspense fallback={<Loader />}>
           <AddTodo onCreate={addTodo} />
         </React.Suspense>
